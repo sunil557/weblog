@@ -1,16 +1,16 @@
 # ==> Install JDK
 ---
-- name: Downloading JDK binary
-  uri:
-    url: "{{ jdk_repo_root }}/{{ jdk_repo_base_path }}/{{ jdk_installation_archive }}"
-    method: GET
-    dest: "/tmp"
-    headers:
-      Accept: application/json
-    validate_certs: false
-    status_code: [200,304]
-  delegate_to: localhost
-  become: false
+#- name: Downloading JDK binary
+#  uri:
+#    url: "{{ jdk_repo_root }}/{{ jdk_repo_base_path }}/{{ jdk_installation_archive }}"
+#    method: GET
+#    dest: "/tmp"
+#    headers:
+#      Accept: application/json
+#    validate_certs: false
+#    status_code: [200,304]
+#  delegate_to: localhost
+#  become: false
 
 
 - name: Copy the installation binary to remote node from ansible master node

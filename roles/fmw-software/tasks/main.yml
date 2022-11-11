@@ -1,22 +1,23 @@
 # ==> Install Fussion Middleware Infrastructure
 
 ---
-- name: Downloading weblogic binary
-  uri:
-    url: "{{ weblogic_repo_root }}"
-    method: GET
-    dest: "/tmp/{{ weblogic_Zip_file }}"
-    headers:
-      Accept: application/json
-    validate_certs: false
-    status_code: [200,304]
-  delegate_to: localhost
-  become: false
+#- name: Downloading weblogic binary
+#  uri:
+#    url: "{{ weblogic_repo_root }}"
+#    method: GET
+#    dest: "/tmp/{{ weblogic_Zip_file }}"
+#    headers:
+#      Accept: application/json
+#    validate_certs: false
+#    status_code: [200,304]
+#  delegate_to: localhost
+#  become: false
 
 - name: Copy the installation binary to remote node from ansible master node
   copy:
     src: "/tmp/{{ weblogic_Zip_file }}"
     dest: "/tmp/{{ weblogic_Zip_file }}"
+    remote_src: yes
 
 #weblogic_Zip_file: 'fmw_14.1.1.0.0_wls_Disk1_1of1.zip'   
 #temp_installer: 'temp/fmw_14.1.1.0.0_wls.jar'
