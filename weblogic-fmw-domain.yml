@@ -8,7 +8,7 @@
     - wls-vars.yml
     - secrets.yml
   roles:
-    - role: linux-wls
+    #- role: linux-wls
     - role: linux-jdk
     - role: fmw-software
    
